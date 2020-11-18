@@ -1,0 +1,15 @@
+on:
+  milestone:
+    types: [closed]
+jobs:
+  createrelease:
+    name: Create Release Issue on milestone closed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ github.event.milestone.title }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/release.md
