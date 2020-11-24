@@ -1,8 +1,7 @@
 ---
 name: Release
 about: Release check list
-## title: {{ env.RELEASE_TAG }}
-title: test
+title: Release {{ env.RELEASE_TAG }}
 labels: 'release'
 assignees: ''
 ---
